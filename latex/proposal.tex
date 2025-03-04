@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\title{\textbf{AirPaddle: Vision-Based Interactive Ball Simulation}\\ \LARGE{CSCI 4220U \& CSCI 3010U}}
+\author{Syed Arham Naqvi \\ 100590852 \\ syedm.naqvi@ontariotechu.net}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{\Large{Summary}}
+This project proposes an interactive game combining computer vision techniques with simulation and modeling. The goal is to develop a real-time system where the user's hand position is translated to
+in-game platform coordinates using computer vision, and a ball is simulated to bounce around the screen where all but the bottom edge are impenetrable. The user must use their hand to move the platform and prevent the ball
+from falling off the screen. The system integrates a physics-based simulation for ball movement and collision dynamics, while computer vision is responsible for detecting and tracking the user's hand in real-time.
+
+\vspace*{5pt}
+
+\section*{\Large{Methodology}}
+
+\begin{center}
+    \begin{minipage}[t]{0.48\textwidth}
+        \subsection*{\large{Computer Vision}}
+        \begin{itemize}
+            \item Use OpenCV and a webcam for real-time hand tracking.
+            \item Implement contour detection or models like MediaPipe Hands.
+            \item Map hand position to control the in-game paddle.
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+        \subsection*{\large{Simulation and Modeling}}
+        \begin{itemize}
+            \item Simulate ball motion using Newtonian mechanics.
+            \item Implement realistic ball-hand and ball-wall collisions.
+            \item Assume fully elastic ball physics with no friction.
+        \end{itemize}
+    \end{minipage}
+\end{center}
+
+\begin{center}
+    \begin{minipage}[t]{0.96\textwidth}
+        \subsection*{\large{Game Mechanics}}
+        \begin{itemize}
+            \item The ball moves under gravity and bounces realistically (assuming full elasticity).
+            \item The user must keep the ball in play using their hand.
+            \item Score tracking, game-over conditions and difficulty settings (multiple balls) are implemented.
+        \end{itemize}
+    \end{minipage}
+\end{center}
+
+\vspace*{5pt}
+
+\section*{\Large{Challenges and Solutions}}
+
+\begin{center}
+    \begin{minipage}[t]{0.48\textwidth}
+        \subsection*{\large{Hand Detection Accuracy}}
+        \begin{itemize}
+            \item \textbf{Challenge:} Lighting and occlusion can affect tracking.
+            \item \textbf{Solution:} Use adaptive thresholding or deep learning models.
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+        \subsection*{\large{Real-Time Performance}}
+        \begin{itemize}
+            \item \textbf{Challenge:} Maintain smooth gameplay with low latency.
+            \item \textbf{Solution:} Utilize deep learning models and GPU processing.
+        \end{itemize}
+    \end{minipage}
+\end{center}
+
+\end{document}
